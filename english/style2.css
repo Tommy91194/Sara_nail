@@ -1,0 +1,241 @@
+/* GENERAL STYLES */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 400px;
+    background-color: #333;
+}
+
+.hero img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.hero .btn-primary {
+    background-color: #f8c1c1; /* Soft pink color */
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+    background-color: #e2b0b0;
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-link {
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #f8c1c1; /* Soft pink color */
+}
+
+/* SERVICES SECTION */
+#services {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+#services .service {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#services .service h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#services .service p {
+    font-size: 1rem;
+    color: #888;
+}
+
+/* GALLERY SECTION */
+#gallery {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* ABOUT SECTION */
+#about {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* CONTACT SECTION */
+#contact {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form button {
+    background-color: #f8c1c1; /* Soft pink color */
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #e2b0b0;
+}
+
+/* FOOTER */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* ADDITIONAL STYLES */
+.btn-primary {
+    background-color: #f8c1c1;
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e2b0b0;
+}
