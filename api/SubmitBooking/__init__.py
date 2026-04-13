@@ -1,32 +1,35 @@
 import azure.functions as func
 import json
-import logging
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    logging.info('Processing a new booking request.')
-
     try:
-        # Get data from the JavaScript fetch
         req_body = req.get_json()
         name = req_body.get('name')
         phone = req_body.get('phone')
         email = req_body.get('email')
         message = req_body.get('message')
 
-        # Create a friendly response
-        response_data = {
-            "status": "success",
-            "message": f"Chào {name}! SARA.nail has received your message. We will contact you at {phone} soon."
-        }
-
-        return func.HttpResponse(
-            json.dumps(response_data),
-            status_code=200,
-            mimetype="application/json"
+        # 1. Create the Email
+        email_content = f"New Booking from: {name}\nPhone: {phone}\nEmail: {email}\nMessage: {message}"
+        
+        mail = Mail(
+            from_email='your-verified-email@domain.com', # Must match SendGrid sender
+            to_emails='uynhpham2103@gmail.com', # Where YOU want to receive the notification
+            subject=f'New Nail Shop Booking: {name}',
+            plain_text_content=email_content
         )
 
-    except ValueError:
+        # 2. Send the Email using the API Key stored in Azure Settings
+        sg = SendGridAPIClient(os.environ.get('SendGrid_API_Key'))
+        sg.send(mail)
+
         return func.HttpResponse(
-             "Invalid request data",
-             status_code=400
+            json.dumps({"status": "success", "message": "Email notification sent!"}),
+            status_code=200
         )
+
+    except Exception as e:
+        return func.HttpResponse(f"Error: {str(e)}", status_code=500)
