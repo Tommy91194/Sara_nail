@@ -16,8 +16,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         email_content = f"New Booking from: {name}\nPhone: {phone}\nEmail: {email}\nMessage: {message}"
         
         mail = Mail(
-            from_email='your-verified-email@domain.com', # Must match SendGrid sender
-            to_emails='uynhpham2103@gmail.com', # Where YOU want to receive the notification
+            from_email='quangpham91194@domain.com', # Must match SendGrid sender
+            to_emails='quangpham91194@gmail.com', # Where YOU want to receive the notification
             subject=f'New Nail Shop Booking: {name}',
             plain_text_content=email_content
         )
