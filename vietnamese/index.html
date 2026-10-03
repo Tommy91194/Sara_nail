@@ -237,7 +237,10 @@
             <h2>Liên Hệ</h2>
             <p>Bạn có câu hỏi hoặc muốn đặt lịch hẹn? Chúng tôi rất mong được nghe từ bạn! Hãy điền vào biểu mẫu dưới đây hoặc liên hệ với chúng tôi qua thông tin được cung cấp.</p>
             <!-- Biểu mẫu liên hệ -->
-            <form action="submit_form.php" method="POST" class="contact-form" onsubmit="return validateForm()">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <!-- Replace with your actual Access Key from Web3Forms -->
+                <input type="hidden" name="access_key" value="480a0535-cb93-4c45-ab74-5930ad61695c">
+
                 <div class="form-group">
                     <label for="name">Tên của bạn</label>
                     <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" required>
@@ -245,7 +248,7 @@
 
                 <div class="form-group">
                     <label for="phone-number">Số điện thoại</label>
-                    <input type="text" id="phone-number" name="phone-number" placeholder="Nhập số điện thoại" required>
+                    <input type="text" id="phone-number" name="phone" placeholder="Nhập số điện thoại" required>
                 </div>
 
                 <div class="form-group">
@@ -254,23 +257,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Lời nhắn</label>
-                    <textarea id="message" name="message" placeholder="Viết lời nhắn" required></textarea>
+                    <label for="message">Tin nhắn</label>
+                    <textarea id="message" name="message" placeholder="Nhập tin nhắn của bạn" required></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">Gửi Lời Nhắn</button>
+                <button type="submit" class="submit-btn">Gửi Tin Nhắn</button>
             </form>
-
-            <script>
-                function validateForm() {
-                    var name = document.getElementById('name').value;
-                    var email = document.getElementById('email').value;
-                    var message = document.getElementById('message').value;
-                    if (name == "" || email == "" || message == "") {
-                        alert("Vui lòng điền đầy đủ thông tin");
-                        return false;
-                    }
-                    return true;
                 }
             </script>
 
@@ -279,7 +271,7 @@
                 <div class="contact-detail">
                     <h3>Ghé Thăm Sara Nail</h3>
                     <p>Email: <a href="mailto:uynhpham2103@gmail.com">uynhpham2103@gmail.com</a></p>
-                    <p>Điện thoại: <a href="tel:+84905354453">0344188665</a></p>
+                    <p>Điện thoại: <a href="tel:+84344188665">0344188665</a></p>
                     <p>Địa chỉ: 
                         <a href="https://www.google.com/maps/place/Sara.nail/@16.0727375,108.2135762,17z/data=!3m1!4b1!4m6!3m5!1s0x3142198ff3d5e1a3:0x80430d8596afaa2f!8m2!3d16.0727375!4d108.2135762!16s%2Fg%2F11l6gyt9yc?entry=ttu&g_ep=EgoyMDI1MDEyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
                             301 Đống Đa, Đà Nẵng, Việt Nam
